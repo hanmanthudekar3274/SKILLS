@@ -68,4 +68,4 @@ Skills/
 4. Register the skill in Claude Code settings if needed.
 
 ## Author
-Hanmant Hudekar — SmartBear QA Engineering
+Hanmant Hudekar — QA Engineering

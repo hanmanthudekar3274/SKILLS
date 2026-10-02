@@ -5,8 +5,15 @@ Turn a JIRA ticket and all discussions happend in tickets comments into review r
 Says "Write a test plan for ticket ABC-1234" or  "Plan the testing activities for story ABC-1234",
 "What I should test here ABC-123?" or "User diractly pastes acceptance criteria and ask to create test plan"
 
-Fetch the ticket descriptions and comments and analyze the gaps and ambiguities and fill the standerd test plan template,
-and stop for human review before treated as final.
+
+ Step 1a: Fetch ticket summary, description, AC
+ Step 1b: Fetch and parse all comments
+ Step 1c: Identify discussion threads and conflicting interpretations
+ Step 1d: Mark areas where discussion reveals ambiguity
+ step 1e: fill the standerd test plan template.
+ step 1f: Stop for human review before treated as final.
+
+
 
 license: MIT
 metadata:
@@ -41,6 +48,7 @@ Explicitly List:
 - Unstated, non functional needs (pef, security, ally, i18n, permisions / roles )
 - Missing testdata, environments or dependencies.
 - Ambiguous wording that two Engineers reads in two different ways.
+
 ### 3. Draft a test plan 
 Fill `references/test-plan-template.md` completely. Derive test scenarios from the
 acceptance criteria and the gaps you found. Cover positive, negative, boundary,
@@ -71,10 +79,12 @@ Assumptions made / Open questions / "Approve or edit before I continue"
 - Never mark the plan "final" — a human owns sign-off.
 - Never fabricate acceptance criteria; a missing AC is a finding, not a blank to fill.
 - Keep scenarios traceable: each maps to an AC or a gap.
+- Do not any credentials in test plan.
+- Do not reveal personaly identifiable information (PII) in testplan.
+
 
 ## References
 - `references/requirement-checklist.md` — the gap-analysis checklist
 - `references/test-plan-template.md` — the plan template to fill
 - `scripts/fetch_jira.sh` — pull a ticket over the JIRA REST API
-- `copilot/test-plan.prompt.md` — the same skill as a GitHub Copilot prompt file
 
